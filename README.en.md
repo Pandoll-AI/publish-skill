@@ -4,47 +4,35 @@
   <a href="README.md"><img alt="한국어로 보기" src="https://img.shields.io/badge/%ED%95%9C%EA%B5%AD%EC%96%B4%EB%A1%9C-%EB%B3%B4%EA%B8%B0-111827?style=for-the-badge"></a>
 </p>
 
-<p align="center">
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-skill-111827">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.3.0-0f766e">
-  <img alt="Python" src="https://img.shields.io/badge/python-3.x-blue">
-  <img alt="License" src="https://img.shields.io/github/license/Pandoll-AI/publish-skill">
-  <img alt="Last Commit" src="https://img.shields.io/github/last-commit/Pandoll-AI/publish-skill">
-  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/Pandoll-AI/publish-skill">
-  <img alt="Issues" src="https://img.shields.io/github/issues/Pandoll-AI/publish-skill">
-  <img alt="Stars" src="https://img.shields.io/github/stars/Pandoll-AI/publish-skill?style=social">
-  <img alt="Forks" src="https://img.shields.io/github/forks/Pandoll-AI/publish-skill?style=social">
-  <img alt="Languages" src="https://img.shields.io/badge/language-ko%20%7C%20en--GB-0f766e">
-  <img alt="No Invented Citations" src="https://img.shields.io/badge/source%20policy-no%20invented%20citations-f59e0b">
-</p>
+<p align="center"><strong>v0.3.0 scaffold</strong> · Codex Skill · Python 3 · MIT</p>
 
 <p align="center">
   <img alt="Publish Skill poster hero" src="assets/hero.png">
 </p>
 
-<p align="center"><strong>Publish Skill is not a tool that polishes too early.</strong></p>
+<p align="center"><strong>Publish Skill does not polish before it checks the draft.</strong></p>
 
-<p align="center">It separates claims first, marks evidence gaps and logic risks, and only then applies conservative edits where the draft can be made safer without inventing evidence.</p>
+<p align="center">It surfaces claims, evidence gaps, and logic risks first, then edits only where the draft can be made safer without inventing evidence.</p>
 
-<p align="center"><strong>Current maturity: v0.3.0 scaffold.</strong> The local runner does not perform live web verification or deep semantic judgement.</p>
+<p align="center">The local runner is a conservative heuristic tool. Live web verification and deeper semantic judgement belong to a Codex agent workflow with the right tools.</p>
 
 ## Why It Exists
 
-Most writing tools improve sentences before they inspect the reasoning. That can hide causal leaps, inflated claims, unsupported numbers, and generic AI phrasing inside smoother prose.
+When prose is polished too early, risky claims can start to look stronger than they are. Causal leaps, inflated claims, unsupported numbers, and generic AI phrasing become harder to see.
 
-Publish Skill works in the opposite order.
+Publish Skill slows that order down.
 
 ```text
 claims -> evidence gaps -> logic gate -> style pass -> surface claim diff -> final verdict
 ```
 
-It is built for reports, columns, proposals, speeches, blog posts, LinkedIn posts, and any draft where visible verification gaps matter more than merely sounding polished.
+It is built for reports, columns, proposals, speeches, blog posts, LinkedIn posts, and drafts where visible verification gaps matter more than a polished surface.
 
 ## What It Does
 
 - Heuristically separates fact, interpretation, opinion, prediction, and recommendation.
-- Conservatively marks unsupported claims, current-state claims, and high-risk claims.
-- Flags overclaiming, causal leaps, unsupported certainty, weak openings, and weak endings as a first-pass filter.
+- Conservatively marks unsupported, current-state, and high-risk claims.
+- Uses first-pass checks for overclaiming, causal leaps, unsupported certainty, weak openings, and weak endings.
 - Limits strong style rewriting when the logic gate blocks.
 - Preserves authorial voice while reducing generic AI rhythm.
 - Produces review artifacts including `claim_ledger`, `evidence_registry`, `logic_gate`, `style_gate`, and `final_verdict`.
@@ -104,7 +92,7 @@ Run the tests:
 python3 tests/run_tests.py
 ```
 
-See [examples/sample_output/korean_blog_draft](examples/sample_output/korean_blog_draft) for a real scaffold output set. It includes a `revise_required` verdict, showing how the local runner keeps evidence gaps visible.
+See [examples/sample_output/korean_blog_draft](examples/sample_output/korean_blog_draft) for a real scaffold output set. It includes a `revise_required` verdict and shows how the local runner keeps evidence gaps visible.
 
 ## Modes
 

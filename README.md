@@ -4,48 +4,36 @@
   <a href="README.en.md"><img alt="Read in English" src="https://img.shields.io/badge/Read%20in-English-111827?style=for-the-badge"></a>
 </p>
 
-<p align="center">
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-skill-111827">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.3.0-0f766e">
-  <img alt="Python" src="https://img.shields.io/badge/python-3.x-blue">
-  <img alt="License" src="https://img.shields.io/github/license/Pandoll-AI/publish-skill">
-  <img alt="Last Commit" src="https://img.shields.io/github/last-commit/Pandoll-AI/publish-skill">
-  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/Pandoll-AI/publish-skill">
-  <img alt="Issues" src="https://img.shields.io/github/issues/Pandoll-AI/publish-skill">
-  <img alt="Stars" src="https://img.shields.io/github/stars/Pandoll-AI/publish-skill?style=social">
-  <img alt="Forks" src="https://img.shields.io/github/forks/Pandoll-AI/publish-skill?style=social">
-  <img alt="Languages" src="https://img.shields.io/badge/language-ko%20%7C%20en--GB-0f766e">
-  <img alt="No Invented Citations" src="https://img.shields.io/badge/source%20policy-no%20invented%20citations-f59e0b">
-</p>
+<p align="center"><strong>v0.3.0 scaffold</strong> · Codex Skill · Python 3 · MIT</p>
 
 <p align="center">
   <img alt="Publish Skill poster hero" src="assets/hero.png">
 </p>
 
-<p align="center"><strong>Publish Skill은 초안을 바로 예쁘게 고치는 도구가 아닙니다.</strong></p>
+<p align="center"><strong>Publish Skill은 문장을 먼저 예쁘게 만드는 도구가 아닙니다.</strong></p>
 
-<p align="center">먼저 주장을 분리하고, 근거 빈칸과 논리 위험을 표시한 뒤, 안전한 범위에서만 문장을 다듬는 출판 전 워크플로 스캐폴드입니다.</p>
+<p align="center">초안의 주장, 근거 빈칸, 논리 위험을 먼저 드러내고, 안전한 범위에서만 문장을 다듬는 출판 전 워크플로 스캐폴드입니다.</p>
 
-<p align="center"><strong>현재 성숙도: v0.3.0 scaffold.</strong> 로컬 러너는 실시간 웹 검증이나 깊은 의미 판정을 수행하지 않습니다.</p>
+<p align="center">로컬 러너는 보수적인 휴리스틱 도구입니다. 실시간 웹 검증과 깊은 의미 판정은 Codex agent가 별도 도구로 수행해야 합니다.</p>
 
 ## 왜 필요한가
 
-대부분의 글쓰기 도구는 문장을 너무 빨리 다듬습니다. 그 결과 논리 비약, 과장, 출처 없는 수치, AI식 상투구가 더 매끈한 문장 안에 숨어버립니다.
+문장을 너무 빨리 다듬으면 위험한 주장도 매끈해집니다. 논리 비약, 과장, 출처 없는 수치, AI식 상투구가 좋은 문장처럼 보일 수 있습니다.
 
-Publish Skill은 반대로 움직입니다.
+Publish Skill은 순서를 늦춥니다.
 
 ```text
 주장 추출 -> 근거 빈칸 표시 -> 논리 게이트 -> 문체 패스 -> 표면 claim diff -> 최종 판정
 ```
 
-그래서 보고서, 칼럼, 제안서, 연설문, 블로그 글, LinkedIn 글처럼 “좋아 보이는 문장”보다 “검증할 지점이 드러난 글”이 중요한 작업에 맞습니다.
+보고서, 칼럼, 제안서, 연설문, 블로그 글, LinkedIn 글처럼 문장의 인상보다 검증 가능한 상태가 더 중요한 초안에 맞습니다.
 
 ## 핵심 기능
 
-- 사실, 해석, 의견, 전망, 추천을 휴리스틱하게 분리합니다.
-- unsupported claim, current-state claim, high-risk claim을 보수적으로 표시합니다.
-- overclaim, causal leap, unsupported certainty, 약한 도입부와 결론을 1차 필터로 잡습니다.
-- 논리 게이트가 막히면 강한 문체 polish를 제한합니다.
+- 사실, 해석, 의견, 전망, 추천을 휴리스틱하게 나눕니다.
+- 근거 없는 주장, 최신성 확인이 필요한 주장, 고위험 주장을 보수적으로 표시합니다.
+- 과장, 인과 비약, 근거 없는 확신, 약한 도입부와 결론을 1차로 걸러냅니다.
+- 논리 게이트가 막히면 강한 문체 수정을 제한합니다.
 - 글쓴이의 관점과 목소리를 보존하면서 AI스러운 리듬을 줄입니다.
 - `claim_ledger`, `evidence_registry`, `logic_gate`, `style_gate`, `final_verdict`를 포함한 검토 산출물을 남깁니다.
 - 사용자가 요청하거나 제공하지 않은 출처, 링크, 논문명, 통계, 기관명을 만들지 않습니다.
@@ -55,7 +43,7 @@ Publish Skill은 반대로 움직입니다.
 - 로컬 러너는 실시간 웹 검색을 하지 않습니다.
 - Codex agent 실행에서는 사용자가 요청하고 도구가 가능할 때 외부 검증을 별도 단계로 수행할 수 있습니다.
 - URL이 원고에 있다는 이유만으로 검증된 출처로 보지 않습니다.
-- supplied source metadata의 `supports`는 기록용 신호이며, 본문과 claim의 직접 지지를 자동 판정하지 않습니다.
+- 사용자가 제공한 source metadata의 `supports`는 기록용 신호입니다. 본문이 claim을 직접 지지하는지 자동 판정하지 않습니다.
 - `semantic_diff.json`은 표면 claim 비교입니다. NLI나 entailment judge가 아닙니다.
 - `final_verdict.json`의 `heuristic_scores`는 보정된 품질 점수가 아니라 규칙 기반 참고값입니다.
 
@@ -81,7 +69,7 @@ Use $publish-skill to polish this draft for publication with fact, logic, and st
 
 ## 로컬 실행
 
-네트워크 없이 결정적 스캐폴드를 실행할 수 있습니다. 이 실행은 claim audit과 evidence-gap marking에 가깝습니다.
+네트워크 없이 결정적 스캐폴드를 실행할 수 있습니다. 이 실행은 주장 감사와 근거 빈칸 표시를 위한 보수적 점검에 가깝습니다.
 
 ```bash
 python3 scripts/orchestrate_publish.py \
@@ -104,7 +92,7 @@ python3 scripts/validate_outputs.py outputs/example_run
 python3 tests/run_tests.py
 ```
 
-실제 산출물 예시는 [examples/sample_output/korean_blog_draft](examples/sample_output/korean_blog_draft)를 확인하세요. 이 예시는 `revise_required` 상태를 포함하며, 로컬 scaffold가 검증 gap을 숨기지 않는 방식을 보여줍니다.
+실제 산출물 예시는 [examples/sample_output/korean_blog_draft](examples/sample_output/korean_blog_draft)에 있습니다. `revise_required` 상태를 포함해, 로컬 스캐폴드가 검증 빈칸을 숨기지 않는 방식을 보여줍니다.
 
 ## 모드
 
