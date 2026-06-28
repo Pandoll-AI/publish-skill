@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-06-28T13:31:29+00:00",
+  "language": "ko",
+  "genre": "blog_article",
+  "audience": "general professional readers",
+  "purpose": "blog article",
+  "mode": "standard_publish",
+  "mode_policy": "Run the normal publication pipeline with fact, logic, style, risk, and verdict artifacts.",
+  "fact_check_mode": "mixed",
+  "risk_level": "medium",
+  "style_profile": "publication_style_ko",
+  "preserve_intent": true,
+  "do_not_change": [],
+  "known_limits": [
+    "This deterministic script cannot perform live web verification.",
+    "No citation is considered verified unless supplied by the user or explicitly checked by an external agent."
+  ]
+}

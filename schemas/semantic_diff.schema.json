@@ -3,6 +3,8 @@
   "title": "SemanticDiff",
   "type": "object",
   "required": [
+    "method",
+    "limits",
     "semantic_drift",
     "added_claims",
     "strengthened_claims",
@@ -12,6 +14,15 @@
     "added_sources"
   ],
   "properties": {
+    "method": {
+      "const": "surface_claim_diff"
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "semantic_drift": {
       "type": "boolean"
     },

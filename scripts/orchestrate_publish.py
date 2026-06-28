@@ -633,6 +633,11 @@ def build_semantic_diff(original: str, final: str, claims: Dict[str, Any], regis
                 strengthened_claims.append(c["text"])
     semantic_drift = bool(added_claims or strengthened_claims)
     return {
+        "method": "surface_claim_diff",
+        "limits": [
+            "Compares extracted claim strings and URL additions; it is not an entailment, NLI, or source-content judge.",
+            "A conservative style rewrite may change wording enough to require human review even when meaning is preserved.",
+        ],
         "semantic_drift": semantic_drift,
         "added_claims": added_claims,
         "strengthened_claims": strengthened_claims,
@@ -933,12 +938,24 @@ def compute_final_verdict(claims: Dict[str, Any], registry: Dict[str, Any], logi
     factuality = max(0.0, 1.0 - (unsupported_count * 0.08) - (current_needed * 0.06) - (high_risk_unsup * 0.25))
     logic_score = max(0.0, 1.0 - min(len(logic.get("issues", [])), 6) * 0.08)
     risk_score = 0.55 if high_risk_unsup else max(0.6, 1.0 - len(risk_flags) * 0.08)
-    scores = {
+    claim_ids = {c["claim_id"] for c in claims.get("claims", [])}
+    registry_ids = {e.get("claim_id") for e in registry.get("entries", [])}
+    if claim_ids:
+        traceability_coverage = len(claim_ids & registry_ids) / len(claim_ids)
+    else:
+        traceability_coverage = 0.7
+    unsupported_evidence_is_clean = all(
+        not e.get("evidence_ids")
+        for e in registry.get("entries", [])
+        if e.get("support_status") in {"unsupported", "needs_current_check"}
+    )
+    traceability = min(0.9, traceability_coverage if unsupported_evidence_is_clean else traceability_coverage * 0.7)
+    heuristic_scores = {
         "factuality": round(factuality, 2),
         "logic": round(logic_score, 2),
         "style": style_gate.get("style_score", 0.0),
         "readability": style_gate.get("readability_score", 0.0),
-        "traceability": 0.95,
+        "traceability": round(traceability, 2),
         "risk": round(risk_score, 2),
     }
     if status == "pass":
@@ -951,11 +968,16 @@ def compute_final_verdict(claims: Dict[str, Any], registry: Dict[str, Any], logi
         next_action = "Do not publish until major factual or safety defects are corrected."
     return {
         "status": status,
-        "scores": scores,
+        "heuristic_scores": heuristic_scores,
+        "score_basis": {
+            "type": "deterministic_heuristic",
+            "calibrated_quality_measure": False,
+            "note": "Scores are rule-based scaffold hints. They do not prove factual correctness, source support, or publication quality.",
+        },
         "blocking_issues": sorted(set(blocking)),
         "residual_warnings": sorted(set(warnings + risk_flags)),
         "recommended_next_action": next_action,
-        "release_note": "Verdict produced by Publish Skill deterministic scaffold. Full LLM execution should apply the same gates with deeper judgement.",
+        "release_note": "Verdict produced by the Publish Skill deterministic scaffold. Full factual verification requires supplied sources or an external research agent.",
     }
 
 

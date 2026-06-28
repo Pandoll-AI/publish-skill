@@ -89,6 +89,8 @@ Write `style_pass.md` with:
 
 Write `semantic_diff.json` with:
 
+- `method`: `surface_claim_diff` unless a stronger judge was actually used
+- `limits`: short list of what the method cannot prove
 - `semantic_drift`
 - `added_claims`
 - `strengthened_claims`

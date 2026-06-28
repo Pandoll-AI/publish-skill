@@ -1,0 +1,18 @@
+{
+  "status": "revise_required",
+  "blockers": [
+    "C003: conclusion strength exceeds available support.",
+    "C004: conclusion strength exceeds available support.",
+    "C010: conclusion strength exceeds available support."
+  ],
+  "required_repairs": [
+    "Frame C004 as association, interpretation, or hypothesis unless evidence is supplied.",
+    "Make hidden premises explicit or narrow the conclusion.",
+    "Repair or soften causal language before publication-style rewriting.",
+    "Weaken C003 or add evidence before publication.",
+    "Weaken C004 or add evidence before publication.",
+    "Weaken C010 or add evidence before publication."
+  ],
+  "may_proceed_to_style": false,
+  "retry_allowed": true
+}

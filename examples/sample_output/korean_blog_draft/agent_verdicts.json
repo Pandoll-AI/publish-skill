@@ -1,0 +1,95 @@
+{
+  "verdicts": [
+    {
+      "agent": "01_intake_agent",
+      "status": "pass",
+      "confidence": 0.9,
+      "blocking_issues": [],
+      "next_agent": "02_claim_miner_agent"
+    },
+    {
+      "agent": "02_claim_miner_agent",
+      "status": "pass",
+      "confidence": 0.72,
+      "blocking_issues": [],
+      "next_agent": "03_fact_check_agent"
+    },
+    {
+      "agent": "03_fact_check_agent",
+      "status": "conditional_pass",
+      "confidence": 0.68,
+      "blocking_issues": [
+        "Unresolved verification gaps exist."
+      ],
+      "next_agent": "04_evidence_registry_agent"
+    },
+    {
+      "agent": "04_evidence_registry_agent",
+      "status": "pass",
+      "confidence": 0.88,
+      "blocking_issues": [],
+      "next_agent": "05_logic_agent"
+    },
+    {
+      "agent": "05_logic_agent",
+      "status": "revise_required",
+      "confidence": 0.76,
+      "blocking_issues": [],
+      "next_agent": "06_structure_agent"
+    },
+    {
+      "agent": "06_structure_agent",
+      "status": "pass",
+      "confidence": 0.78,
+      "blocking_issues": [],
+      "next_agent": "07_publication_style_agent"
+    },
+    {
+      "agent": "07_publication_style_agent",
+      "status": "revise_required",
+      "confidence": 0.74,
+      "blocking_issues": [
+        "Logic gate has blockers; publication-style polish is not allowed yet.",
+        "Korean AI-style phrase remains."
+      ],
+      "next_agent": "08_line_editor_agent"
+    },
+    {
+      "agent": "08_line_editor_agent",
+      "status": "pass",
+      "confidence": 0.76,
+      "blocking_issues": [],
+      "next_agent": "09_risk_bias_agent"
+    },
+    {
+      "agent": "09_risk_bias_agent",
+      "status": "revise_required",
+      "confidence": 0.75,
+      "blocking_issues": [
+        "Ensure C003 is softened or visibly marked.",
+        "Ensure C004 is softened or visibly marked.",
+        "Ensure C010 is softened or visibly marked.",
+        "Replace hype with concrete evidence-aware language."
+      ],
+      "next_agent": "10_diff_rationale_agent"
+    },
+    {
+      "agent": "10_diff_rationale_agent",
+      "status": "pass",
+      "confidence": 0.84,
+      "blocking_issues": [],
+      "next_agent": "11_final_architect_agent"
+    },
+    {
+      "agent": "11_final_architect_agent",
+      "status": "revise_required",
+      "confidence": 0.82,
+      "blocking_issues": [
+        "C003: conclusion strength exceeds available support.",
+        "C004: conclusion strength exceeds available support.",
+        "C010: conclusion strength exceeds available support."
+      ],
+      "next_agent": null
+    }
+  ]
+}

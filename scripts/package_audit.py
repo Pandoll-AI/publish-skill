@@ -10,7 +10,14 @@ import tempfile
 from pathlib import Path
 from typing import Any, Dict, List
 
+SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT = Path(__file__).resolve().parents[1]
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+from orchestrate_publish import ALL_MODES  # noqa: E402
+from validate_outputs import REQUIRED_FILES  # noqa: E402
+
 REQUIRED_PATHS = [
     "SKILL.md",
     "manifest.json",
@@ -79,10 +86,24 @@ def audit(run_smoke: bool = True) -> Dict[str, Any]:
     manifest = read_json(ROOT / "manifest.json", errors)
     if manifest.get("name") != "publish-skill":
         errors.append("manifest.name must be publish-skill")
+    if manifest.get("version") != "0.3.0":
+        errors.append("manifest.version must reflect current scaffold maturity: 0.3.0")
     if "PDF" in manifest.get("description", ""):
         errors.append("manifest description still appears layout/PDF-specific")
+    if "fact-checks claims" in manifest.get("description", "").lower():
+        errors.append("manifest description overstates local factual verification")
     if "topic" not in manifest.get("description", "").lower() and "agnostic" not in manifest.get("description", "").lower():
         warnings.append("Manifest description should emphasise topic-agnostic behaviour")
+    if manifest.get("supported_modes") != ALL_MODES:
+        errors.append("manifest.supported_modes must match scripts.orchestrate_publish.ALL_MODES")
+    if manifest.get("outputs") != REQUIRED_FILES:
+        errors.append("manifest.outputs must match scripts.validate_outputs.REQUIRED_FILES")
+
+    readme_text = (ROOT / "README.md").read_text(encoding="utf-8") if (ROOT / "README.md").exists() else ""
+    readme_en_text = (ROOT / "README.en.md").read_text(encoding="utf-8") if (ROOT / "README.en.md").exists() else ""
+    for name, text in [("README.md", readme_text), ("README.en.md", readme_en_text)]:
+        if "tests-9%2F9" in text or "skill-valid" in text:
+            errors.append(f"{name} uses a static validation/test badge")
 
     combined_core = "\n".join(
         (ROOT / rel).read_text(encoding="utf-8")

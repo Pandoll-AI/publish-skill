@@ -1,0 +1,33 @@
+{
+  "language": "ko",
+  "voice_traits": [
+    "precise",
+    "measured",
+    "authorial",
+    "evidence-aware"
+  ],
+  "sentence_rhythm": {
+    "sentence_count": 10,
+    "avg_sentence_chars": 34.0
+  },
+  "paragraph_rhythm": {
+    "paragraph_count": 4,
+    "avg_paragraph_chars": 86.5
+  },
+  "confidence_level": "high",
+  "abstraction_level": "high",
+  "preserve_terms": [
+    "검토하며",
+    "결과를 어떤 방식으로",
+    "결국",
+    "글은",
+    "도입에 대한 짧은",
+    "도입의 중요성에 대한",
+    "도입하지 않으면 경쟁에서",
+    "도입해야 한다",
+    "된다",
+    "뒤처질 수밖에 없다",
+    "매우 혁신적인 패러다임",
+    "메모"
+  ]
+}

@@ -4,7 +4,8 @@
   "type": "object",
   "required": [
     "status",
-    "scores",
+    "heuristic_scores",
+    "score_basis",
     "blocking_issues",
     "residual_warnings",
     "recommended_next_action",
@@ -19,7 +20,7 @@
         "fail"
       ]
     },
-    "scores": {
+    "heuristic_scores": {
       "type": "object",
       "required": [
         "factuality",
@@ -59,6 +60,25 @@
           "type": "number",
           "minimum": 0,
           "maximum": 1
+        }
+      }
+    },
+    "score_basis": {
+      "type": "object",
+      "required": [
+        "type",
+        "calibrated_quality_measure",
+        "note"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "calibrated_quality_measure": {
+          "const": false
+        },
+        "note": {
+          "type": "string"
         }
       }
     },

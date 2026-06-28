@@ -97,7 +97,7 @@
       <rect x="535" y="642" width="160" height="36" rx="18" class="chip"/>
       <text x="615" y="666" text-anchor="middle" class="tiny">source needed</text>
       <rect x="720" y="642" width="160" height="36" rx="18" class="amber"/>
-      <text x="800" y="666" text-anchor="middle" class="tiny">semantic diff</text>
+      <text x="800" y="666" text-anchor="middle" class="tiny">surface diff</text>
       <rect x="905" y="642" width="160" height="36" rx="18" class="chip"/>
       <text x="985" y="666" text-anchor="middle" class="tiny">change log</text>
     </g>

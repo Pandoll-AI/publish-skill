@@ -1,0 +1,123 @@
+{
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "# AI 도입에 대한 짧은 메모",
+      "claim_type": [],
+      "risk_level": "low",
+      "strength": "medium",
+      "needs_verification": false,
+      "reason": "not a check-worthy claim",
+      "location_hint": "sentence_1"
+    },
+    {
+      "claim_id": "C002",
+      "text": "본 글은 AI 도입의 중요성에 대한 중요한 시사점을 제공한다.",
+      "claim_type": [
+        "interpretation"
+      ],
+      "risk_level": "low",
+      "strength": "low",
+      "needs_verification": false,
+      "reason": "substantial interpretive or explanatory statement",
+      "location_hint": "sentence_2"
+    },
+    {
+      "claim_id": "C003",
+      "text": "현재 모든 조직은 AI를 도입하지 않으면 경쟁에서 뒤처질 수밖에 없다.",
+      "claim_type": [
+        "current_state"
+      ],
+      "risk_level": "medium",
+      "strength": "high",
+      "needs_verification": true,
+      "reason": "contains current/latest/recent wording",
+      "location_hint": "sentence_3"
+    },
+    {
+      "claim_id": "C004",
+      "text": "2024년 이후 생성형 AI는 문서 작성 시간을 50% 이상 줄였고, 이로 인해 모든 팀의 생산성 문제도 해결될 것이다.",
+      "claim_type": [
+        "causal",
+        "number_or_date",
+        "prediction"
+      ],
+      "risk_level": "medium",
+      "strength": "high",
+      "needs_verification": true,
+      "reason": "contains number, percentage, date, or year; contains causal language; contains predictive wording",
+      "location_hint": "sentence_4"
+    },
+    {
+      "claim_id": "C005",
+      "text": "하지만 실제 현장에서는 모델 성능보다 워크플로우가 더 중요하다.",
+      "claim_type": [
+        "interpretation"
+      ],
+      "risk_level": "low",
+      "strength": "medium",
+      "needs_verification": false,
+      "reason": "substantial interpretive or explanatory statement",
+      "location_hint": "sentence_5"
+    },
+    {
+      "claim_id": "C006",
+      "text": "사람이 어디에서 멈추고, 어떤 책임",
+      "claim_type": [],
+      "risk_level": "low",
+      "strength": "medium",
+      "needs_verification": false,
+      "reason": "not a check-worthy claim",
+      "location_hint": "sentence_6"
+    },
+    {
+      "claim_id": "C007",
+      "text": "구조로 검토하며, 결과를 어떤 방식으로 설명할지가 먼저 정해져야 한다.",
+      "claim_type": [
+        "interpretation"
+      ],
+      "risk_level": "low",
+      "strength": "medium",
+      "needs_verification": false,
+      "reason": "substantial interpretive or explanatory statement",
+      "location_hint": "sentence_7"
+    },
+    {
+      "claim_id": "C008",
+      "text": "이것이 없으면 좋은 모델도 위험한 자동화가 된다.",
+      "claim_type": [
+        "interpretation"
+      ],
+      "risk_level": "low",
+      "strength": "medium",
+      "needs_verification": false,
+      "reason": "substantial interpretive or explanatory statement",
+      "location_hint": "sentence_8"
+    },
+    {
+      "claim_id": "C009",
+      "text": "결국 AI는 매우 혁신적인 패러다임 전환이라고 할 수 있다.",
+      "claim_type": [
+        "interpretation"
+      ],
+      "risk_level": "low",
+      "strength": "low",
+      "needs_verification": false,
+      "reason": "substantial interpretive or explanatory statement",
+      "location_hint": "sentence_9"
+    },
+    {
+      "claim_id": "C010",
+      "text": "조직은 반드시 최신 모델을 가장 빠르게 도입해야 한다.",
+      "claim_type": [
+        "current_state",
+        "recommendation"
+      ],
+      "risk_level": "medium",
+      "strength": "high",
+      "needs_verification": true,
+      "reason": "contains current/latest/recent wording; contains recommendation or obligation wording",
+      "location_hint": "sentence_10"
+    }
+  ]
+}

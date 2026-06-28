@@ -1,0 +1,29 @@
+{
+  "central_thesis": "# AI 도입에 대한 짧은 메모",
+  "supporting_claim_ids": [
+    "C002",
+    "C003",
+    "C004",
+    "C005",
+    "C007",
+    "C008",
+    "C009",
+    "C010"
+  ],
+  "explicit_premises": [
+    "C004",
+    "C010"
+  ],
+  "hidden_premises": [
+    "C003: strong conclusion requires a premise or evidence not present in the draft.",
+    "C004: strong conclusion requires a premise or evidence not present in the draft.",
+    "C010: strong conclusion requires a premise or evidence not present in the draft."
+  ],
+  "evidence_strength": "medium",
+  "conclusion_strength": "high",
+  "counterarguments_needed": [
+    "C003",
+    "C004",
+    "C010"
+  ]
+}

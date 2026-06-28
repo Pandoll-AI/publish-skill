@@ -1,0 +1,85 @@
+{
+  "entries": [
+    {
+      "claim_id": "C001",
+      "support_status": "not_applicable",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Opinion, interpretation, or low-risk prose; direct factual verification not required.",
+      "allowed_final_handling": "keep"
+    },
+    {
+      "claim_id": "C002",
+      "support_status": "not_applicable",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Opinion, interpretation, or low-risk prose; direct factual verification not required.",
+      "allowed_final_handling": "keep"
+    },
+    {
+      "claim_id": "C003",
+      "support_status": "needs_current_check",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Current/latest claim needs live verification; no checked source was available to this script.",
+      "allowed_final_handling": "mark_for_review"
+    },
+    {
+      "claim_id": "C004",
+      "support_status": "unsupported",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "No supporting source was supplied or verified.",
+      "allowed_final_handling": "mark_for_review"
+    },
+    {
+      "claim_id": "C005",
+      "support_status": "not_applicable",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Opinion, interpretation, or low-risk prose; direct factual verification not required.",
+      "allowed_final_handling": "keep"
+    },
+    {
+      "claim_id": "C006",
+      "support_status": "not_applicable",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Opinion, interpretation, or low-risk prose; direct factual verification not required.",
+      "allowed_final_handling": "keep"
+    },
+    {
+      "claim_id": "C007",
+      "support_status": "not_applicable",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Opinion, interpretation, or low-risk prose; direct factual verification not required.",
+      "allowed_final_handling": "keep"
+    },
+    {
+      "claim_id": "C008",
+      "support_status": "not_applicable",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Opinion, interpretation, or low-risk prose; direct factual verification not required.",
+      "allowed_final_handling": "keep"
+    },
+    {
+      "claim_id": "C009",
+      "support_status": "not_applicable",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Opinion, interpretation, or low-risk prose; direct factual verification not required.",
+      "allowed_final_handling": "keep"
+    },
+    {
+      "claim_id": "C010",
+      "support_status": "needs_current_check",
+      "evidence_ids": [],
+      "source_summary": "",
+      "verification_notes": "Current/latest claim needs live verification; no checked source was available to this script.",
+      "allowed_final_handling": "mark_for_review"
+    }
+  ],
+  "sources": []
+}

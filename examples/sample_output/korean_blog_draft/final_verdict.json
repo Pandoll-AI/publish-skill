@@ -1,0 +1,32 @@
+{
+  "status": "revise_required",
+  "heuristic_scores": {
+    "factuality": 0.8,
+    "logic": 0.68,
+    "style": 0.66,
+    "readability": 0.86,
+    "traceability": 0.9,
+    "risk": 0.68
+  },
+  "score_basis": {
+    "type": "deterministic_heuristic",
+    "calibrated_quality_measure": false,
+    "note": "Scores are rule-based scaffold hints. They do not prove factual correctness, source support, or publication quality."
+  },
+  "blocking_issues": [
+    "C003: conclusion strength exceeds available support.",
+    "C004: conclusion strength exceeds available support.",
+    "C010: conclusion strength exceeds available support."
+  ],
+  "residual_warnings": [
+    "Current-state claim C003 needs live verification.",
+    "Current-state claim C010 needs live verification.",
+    "Strong claim C004 lacks supporting evidence.",
+    "Technology or rhetorical hype may still be present.",
+    "Unsupported certainty remains around C003.",
+    "Unsupported certainty remains around C004.",
+    "Unsupported certainty remains around C010."
+  ],
+  "recommended_next_action": "Resolve blocking evidence or logic issues, then rerun the publication pipeline.",
+  "release_note": "Verdict produced by the Publish Skill deterministic scaffold. Full factual verification requires supplied sources or an external research agent."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "revise_required",
+  "style_score": 0.66,
+  "readability_score": 0.86,
+  "semantic_drift": false,
+  "source_added": false,
+  "remaining_issues": [
+    "Logic gate has blockers; publication-style polish is not allowed yet.",
+    "Korean AI-style phrase remains."
+  ],
+  "retry_allowed": true
+}

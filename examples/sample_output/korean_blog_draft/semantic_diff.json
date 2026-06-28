@@ -1,0 +1,19 @@
+{
+  "method": "surface_claim_diff",
+  "limits": [
+    "Compares extracted claim strings and URL additions; it is not an entailment, NLI, or source-content judge.",
+    "A conservative style rewrite may change wording enough to require human review even when meaning is preserved."
+  ],
+  "semantic_drift": false,
+  "added_claims": [],
+  "strengthened_claims": [],
+  "removed_key_points": [],
+  "meaning_preserved": true,
+  "source_added": false,
+  "added_sources": [],
+  "unsupported_claim_ids_checked": [
+    "C003",
+    "C004",
+    "C010"
+  ]
+}

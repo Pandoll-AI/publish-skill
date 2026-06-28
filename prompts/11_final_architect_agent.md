@@ -65,7 +65,8 @@ Make the final release decision. This agent is the gatekeeper.
 Write `final_verdict.json` with:
 
 - `status`: `pass`, `conditional_pass`, `revise_required`, or `fail`
-- `scores`: factuality, logic, style, readability, traceability, risk
+- `heuristic_scores`: factuality, logic, style, readability, traceability, risk
+- `score_basis`: explicitly state that the scores are deterministic or judgement-based heuristics, not calibrated quality measurements
 - `blocking_issues`
 - `residual_warnings`
 - `recommended_next_action`

@@ -1,8 +1,8 @@
 {
   "name": "publish-skill",
-  "version": "2.0.0",
+  "version": "0.3.0",
   "display_name": "Publish Skill",
-  "description": "A topic-agnostic publication-ready writing skill that fact-checks claims, repairs logic, and rewrites drafts into a natural publication style without hallucinating evidence.",
+  "description": "A topic-agnostic, fact-first publication workflow scaffold. It audits claims, records evidence gaps, flags logic/style risks, and can apply conservative local edits without hallucinating evidence. Full factual verification requires supplied sources or an external research agent.",
   "language_support": [
     "ko",
     "en-GB",
@@ -10,14 +10,18 @@
   ],
   "default_mode": "standard_publish",
   "supported_modes": [
+    "audit_only",
+    "light_edit",
     "quick_polish",
     "standard_publish",
     "publish_gate",
+    "strong_rewrite",
+    "publish_ready",
     "high_risk_review",
     "voice_rewrite",
     "explain_for_beginner",
-    "audit_only",
     "fact_check_only",
+    "publication_style_only",
     "logic_only"
   ],
   "lifecycle": [
@@ -35,23 +39,35 @@
   ],
   "core_principles": [
     "Topic agnostic: never hard-code a subject domain into the workflow.",
-    "Facts before style: claims are mined and checked before rewriting.",
+    "Facts before style: claims are mined and checked against supplied evidence before rewriting.",
     "No invented evidence: unknowns must be labelled, weakened, or removed.",
     "Preserve the author's intent and judgement.",
     "Make the final prose human, precise, and readable."
   ],
   "outputs": [
-    "final_draft.md",
-    "argument_map.json",
-    "logic_gate.json",
+    "task_card.json",
+    "claim_ledger.json",
     "fact_check_report.md",
+    "evidence_registry.json",
+    "argument_map.json",
     "logic_report.md",
+    "logic_gate.json",
+    "structure_plan.md",
     "style_profile.json",
+    "style_pass.md",
     "semantic_diff.json",
     "style_gate.json",
+    "line_edit.md",
     "risk_report.md",
     "change_log.md",
+    "final_draft.md",
     "final_verdict.json"
+  ],
+  "limitations": [
+    "The bundled local runner is a deterministic heuristic scaffold, not a live web fact-checker.",
+    "URL presence and source metadata are recorded but not automatically verified.",
+    "semantic_diff.json uses surface claim comparison, not entailment or NLI.",
+    "final_verdict.json exposes heuristic_scores, not calibrated quality measurements."
   ],
   "entrypoints": {
     "orchestrator": "scripts/orchestrate_publish.py",

@@ -76,6 +76,10 @@ def validate_output_dir(output_dir: Path) -> Dict[str, Any]:
             errors.append("semantic_diff.semantic_drift must be boolean")
         if not isinstance(semantic_diff.get("source_added"), bool):
             errors.append("semantic_diff.source_added must be boolean")
+        if semantic_diff.get("method") != "surface_claim_diff":
+            errors.append("semantic_diff.method must be surface_claim_diff for the local scaffold")
+        if not isinstance(semantic_diff.get("limits"), list) or not semantic_diff.get("limits"):
+            errors.append("semantic_diff.limits must describe method limitations")
         if verdict.get("status") == "pass":
             if logic_gate.get("status") != "pass":
                 errors.append("final_verdict cannot pass unless logic_gate.status is pass")
@@ -85,10 +89,17 @@ def validate_output_dir(output_dir: Path) -> Dict[str, Any]:
                 errors.append("final_verdict cannot pass when semantic_drift is true")
             if semantic_diff.get("source_added"):
                 errors.append("final_verdict cannot pass when source_added is true")
+        scores = verdict.get("heuristic_scores", {})
+        if not isinstance(scores, dict):
+            errors.append("final_verdict.heuristic_scores must be an object")
+            scores = {}
+        score_basis = verdict.get("score_basis", {})
+        if score_basis.get("calibrated_quality_measure") is not False:
+            errors.append("final_verdict.score_basis must mark scores as non-calibrated heuristics")
         for key in ["factuality", "logic", "style", "readability", "traceability", "risk"]:
-            val = verdict.get("scores", {}).get(key)
+            val = scores.get(key)
             if not isinstance(val, (int, float)) or not (0 <= val <= 1):
-                errors.append(f"final_verdict.scores.{key} must be between 0 and 1")
+                errors.append(f"final_verdict.heuristic_scores.{key} must be between 0 and 1")
         # No fake citation smoke check: unsupported entries must not carry evidence ids.
         for entry in registry.get("entries", []):
             if entry.get("support_status") in {"unsupported", "needs_current_check"} and entry.get("evidence_ids"):
