@@ -1,0 +1,20 @@
+agent_order:
+  - 01_intake_agent
+  - 02_claim_miner_agent
+  - 03_fact_check_agent
+  - 04_evidence_registry_agent
+  - 05_logic_agent
+  - 06_structure_agent
+  - 07_publication_style_agent
+  - 08_line_editor_agent
+  - 09_risk_bias_agent
+  - 10_diff_rationale_agent
+  - 11_final_architect_agent
+bounded_input_policy:
+  default_max_chars_per_agent: 24000
+  claim_miner_max_chars: 50000
+  final_architect_max_chars: 50000
+artifact_policy:
+  every_agent_writes_artifact: true
+  every_agent_writes_verdict: true
+  terminate_after_verdict: true

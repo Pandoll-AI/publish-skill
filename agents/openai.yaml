@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish Skill"
+  short_description: "Publication-ready writing final pass"
+  default_prompt: "Use $publish-skill to polish this draft for publication with fact, logic, and style checks."

@@ -1,0 +1,56 @@
+modes:
+  audit_only:
+    rewrite: false
+    strictness: medium
+    outputs: reports_only
+  light_edit:
+    rewrite: conservative
+    strictness: medium
+    preserve_original_structure: true
+  quick_polish:
+    rewrite: conservative
+    strictness: low
+    preserve_original_structure: true
+    gate_behavior: report_not_block_unless_high_risk
+    use_when: short prose needs quick cleanup without external source work
+  standard_publish:
+    rewrite: moderate
+    strictness: medium_high
+    preserve_original_structure: mostly
+  publish_gate:
+    rewrite: moderate
+    strictness: very_high
+    unsupported_claim_tolerance: low
+    gate_behavior: block_until_logic_and_style_pass
+  strong_rewrite:
+    rewrite: aggressive
+    strictness: high
+    preserve_original_structure: false
+  publish_ready:
+    rewrite: moderate
+    strictness: very_high
+    unsupported_claim_tolerance: low
+  high_risk_review:
+    rewrite: conservative
+    strictness: maximum
+    unsupported_claim_tolerance: none
+    gate_behavior: block_on_any_high_risk_gap
+  voice_rewrite:
+    rewrite: style_preserving
+    strictness: medium
+    preserve_author_voice: true
+    gate_behavior: report_not_block_unless_high_risk
+  explain_for_beginner:
+    rewrite: explanatory
+    strictness: medium
+    preserve_core_meaning: true
+    gate_behavior: simplify_without_adding_sources
+  fact_check_only:
+    rewrite: false
+    run_agents: [intake, claim_mining, fact_check, evidence_registry, final_architect]
+  publication_style_only:
+    rewrite: style_only
+    run_agents: [intake, publication_style_pass, line_edit, final_architect]
+  logic_only:
+    rewrite: false
+    run_agents: [intake, claim_mining, logic_review, structure_review, final_architect]

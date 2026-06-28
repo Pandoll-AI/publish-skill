@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FinalVerdict",
+  "type": "object",
+  "required": [
+    "status",
+    "scores",
+    "blocking_issues",
+    "residual_warnings",
+    "recommended_next_action",
+    "release_note"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "pass",
+        "conditional_pass",
+        "revise_required",
+        "fail"
+      ]
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "factuality",
+        "logic",
+        "style",
+        "readability",
+        "traceability",
+        "risk"
+      ],
+      "properties": {
+        "factuality": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "logic": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "style": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "readability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "traceability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "risk": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "blocking_issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "residual_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommended_next_action": {
+      "type": "string"
+    },
+    "release_note": {
+      "type": "string"
+    }
+  }
+}

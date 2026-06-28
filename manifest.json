@@ -1,0 +1,62 @@
+{
+  "name": "publish-skill",
+  "version": "2.0.0",
+  "display_name": "Publish Skill",
+  "description": "A topic-agnostic publication-ready writing skill that fact-checks claims, repairs logic, and rewrites drafts into a natural publication style without hallucinating evidence.",
+  "language_support": [
+    "ko",
+    "en-GB",
+    "mixed"
+  ],
+  "default_mode": "standard_publish",
+  "supported_modes": [
+    "quick_polish",
+    "standard_publish",
+    "publish_gate",
+    "high_risk_review",
+    "voice_rewrite",
+    "explain_for_beginner",
+    "audit_only",
+    "fact_check_only",
+    "logic_only"
+  ],
+  "lifecycle": [
+    "intake",
+    "claim_mining",
+    "fact_check",
+    "evidence_registry",
+    "logic_review",
+    "structure_review",
+    "publication_style_pass",
+    "line_edit",
+    "risk_bias_review",
+    "diff_rationale",
+    "final_architect_verdict"
+  ],
+  "core_principles": [
+    "Topic agnostic: never hard-code a subject domain into the workflow.",
+    "Facts before style: claims are mined and checked before rewriting.",
+    "No invented evidence: unknowns must be labelled, weakened, or removed.",
+    "Preserve the author's intent and judgement.",
+    "Make the final prose human, precise, and readable."
+  ],
+  "outputs": [
+    "final_draft.md",
+    "argument_map.json",
+    "logic_gate.json",
+    "fact_check_report.md",
+    "logic_report.md",
+    "style_profile.json",
+    "semantic_diff.json",
+    "style_gate.json",
+    "risk_report.md",
+    "change_log.md",
+    "final_verdict.json"
+  ],
+  "entrypoints": {
+    "orchestrator": "scripts/orchestrate_publish.py",
+    "sample": "scripts/run_sample.py",
+    "audit": "scripts/package_audit.py",
+    "validate": "scripts/validate_outputs.py"
+  }
+}

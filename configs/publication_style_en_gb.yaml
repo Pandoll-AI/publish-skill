@@ -1,0 +1,35 @@
+name: publication_style_en_gb
+language: en-GB
+principles:
+  - Be precise without sounding mechanical.
+  - Prefer measured judgement over hype.
+  - Separate evidence from interpretation.
+  - Use British spelling and natural expert prose.
+  - Preserve uncertainty where the evidence is weak.
+avoid:
+  - game-changing
+  - revolutionary
+  - paradigm shift
+  - unlock the power of
+  - in today's fast-paced world
+  - it is important to note that
+  - this article explores
+prefer:
+  - The practical question is not whether the technology matters, but where it belongs.
+  - The evidence supports a narrower claim.
+  - This is plausible, but it should not be treated as settled.
+  - The risk is not theoretical; it appears at the point of implementation.
+british_spelling:
+  analyze: analyse
+  analyzed: analysed
+  analyzing: analysing
+  optimize: optimise
+  optimized: optimised
+  organization: organisation
+  color: colour
+  center: centre
+  modeling: modelling
+  behavior: behaviour
+sentence_guidance:
+  max_sentence_words_soft: 32
+  max_paragraph_words_soft: 120

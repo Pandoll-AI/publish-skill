@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LogicGate",
+  "type": "object",
+  "required": [
+    "status",
+    "blockers",
+    "required_repairs",
+    "may_proceed_to_style",
+    "retry_allowed"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "pass",
+        "conditional_pass",
+        "revise_required"
+      ]
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_repairs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "may_proceed_to_style": {
+      "type": "boolean"
+    },
+    "retry_allowed": {
+      "type": "boolean"
+    }
+  }
+}

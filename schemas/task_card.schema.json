@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TaskCard",
+  "type": "object",
+  "required": [
+    "language",
+    "genre",
+    "audience",
+    "purpose",
+    "mode",
+    "fact_check_mode",
+    "risk_level",
+    "style_profile",
+    "preserve_intent"
+  ],
+  "properties": {
+    "language": {
+      "enum": [
+        "ko",
+        "en-GB",
+        "mixed"
+      ]
+    },
+    "genre": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "fact_check_mode": {
+      "enum": [
+        "no-web",
+        "web-required",
+        "user-sources-only",
+        "mixed"
+      ]
+    },
+    "risk_level": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "style_profile": {
+      "type": "string"
+    },
+    "preserve_intent": {
+      "type": "boolean"
+    },
+    "do_not_change": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

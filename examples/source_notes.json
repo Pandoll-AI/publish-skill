@@ -1,0 +1,11 @@
+{
+  "sources": [
+    {
+      "id": "S001",
+      "title": "User-provided internal measurement note",
+      "url": "",
+      "supports": ["C002"],
+      "notes": "Example source metadata. This is intentionally user-supplied, not invented."
+    }
+  ]
+}

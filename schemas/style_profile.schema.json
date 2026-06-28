@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StyleProfile",
+  "type": "object",
+  "required": [
+    "name",
+    "language",
+    "principles",
+    "avoid",
+    "prefer"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "principles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "avoid": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prefer": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

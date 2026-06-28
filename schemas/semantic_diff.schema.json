@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SemanticDiff",
+  "type": "object",
+  "required": [
+    "semantic_drift",
+    "added_claims",
+    "strengthened_claims",
+    "removed_key_points",
+    "meaning_preserved",
+    "source_added",
+    "added_sources"
+  ],
+  "properties": {
+    "semantic_drift": {
+      "type": "boolean"
+    },
+    "added_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strengthened_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "removed_key_points": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "meaning_preserved": {
+      "type": "boolean"
+    },
+    "source_added": {
+      "type": "boolean"
+    },
+    "added_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

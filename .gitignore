@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+
+# Generated local artifacts
+drafts/
+outputs/*
+!outputs/.gitkeep
+dist/*.zip
+.local-artifacts/

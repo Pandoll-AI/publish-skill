@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClaimLedger",
+  "type": "object",
+  "required": [
+    "claims"
+  ],
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "text",
+          "claim_type",
+          "risk_level",
+          "strength",
+          "needs_verification",
+          "reason"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "claim_type": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risk_level": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "strength": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "needs_verification": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "location_hint": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

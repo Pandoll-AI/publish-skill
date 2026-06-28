@@ -1,0 +1,26 @@
+claim_types_requiring_verification:
+  - number
+  - date
+  - current_state
+  - named_entity
+  - causal
+  - comparison
+  - ranking
+  - high_risk
+  - scientific
+  - legal
+  - financial
+allowed_statuses:
+  - supported
+  - unsupported
+  - contradicted
+  - needs_current_check
+  - not_applicable
+handling_policy:
+  supported: keep
+  unsupported: weaken_or_mark
+  contradicted: remove_or_correct
+  needs_current_check: mark_for_review_or_verify
+  not_applicable: keep_as_opinion
+no_web_rule: Do not imply verification when no source or live checking is available.
+no_fake_citation_rule: Never invent citation metadata.

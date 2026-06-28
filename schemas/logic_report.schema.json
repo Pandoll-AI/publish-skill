@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LogicReport",
+  "type": "object",
+  "required": [
+    "core_thesis",
+    "issues",
+    "repairs",
+    "recommended_flow"
+  ],
+  "properties": {
+    "core_thesis": {
+      "type": "string"
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "repairs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommended_flow": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceRegistry",
+  "type": "object",
+  "required": [
+    "entries"
+  ],
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "support_status",
+          "evidence_ids",
+          "source_summary",
+          "verification_notes",
+          "allowed_final_handling"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "support_status": {
+            "enum": [
+              "supported",
+              "unsupported",
+              "contradicted",
+              "needs_current_check",
+              "not_applicable"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_summary": {
+            "type": "string"
+          },
+          "verification_notes": {
+            "type": "string"
+          },
+          "allowed_final_handling": {
+            "enum": [
+              "keep",
+              "weaken",
+              "remove",
+              "mark_for_review",
+              "convert_to_opinion"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

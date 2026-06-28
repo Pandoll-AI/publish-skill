@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChangeLog",
+  "type": "object",
+  "required": [
+    "major_changes",
+    "factual_safety_changes",
+    "logic_changes",
+    "style_changes",
+    "preserved_choices"
+  ],
+  "properties": {
+    "major_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "factual_safety_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "logic_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "style_changes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "preserved_choices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

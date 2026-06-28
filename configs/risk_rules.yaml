@@ -1,0 +1,33 @@
+risk_levels:
+  high:
+    domains:
+      - medical diagnosis or treatment
+      - legal compliance or rights
+      - financial advice or investment recommendation
+      - public safety
+      - child safety
+      - clinical or scientific claims affecting behaviour
+    required_handling:
+      - verify with reliable source or mark as unverified
+      - avoid prescriptive wording without evidence
+      - add caveat or scope limitation
+  medium:
+    domains:
+      - business strategy
+      - technology performance
+      - policy interpretation
+      - education claims
+      - productivity claims
+  low:
+    domains:
+      - personal opinion
+      - memoir
+      - literary style
+bias_flags:
+  - technology_hype
+  - company_or_vendor_bias
+  - us_centric_assumption
+  - latest_model_worship
+  - unsupported_certainty
+  - moralising_tone
+  - overgeneralisation

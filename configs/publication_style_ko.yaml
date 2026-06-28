@@ -1,0 +1,25 @@
+name: publication_style_ko
+language: ko
+principles:
+  - 사실, 해석, 판단을 분리한다.
+  - 차분하지만 결론은 흐리지 않는다.
+  - 한 문단에는 한 가지 생각만 둔다.
+  - 근거가 약한 문장은 강하게 쓰지 않는다.
+  - 사람의 호흡으로 읽히는 문장을 우선한다.
+avoid:
+  - 중요한 시사점을 제공한다
+  - 패러다임 전환이라고 할 수 있다
+  - 매우 혁신적이다
+  - 본 글은
+  - 다양한 관점에서 살펴볼 필요가 있다
+  - ~라고 할 수 있다
+  - ~하는 데 있어
+prefer:
+  - 먼저 무엇이 사실인지 분리해야 한다
+  - 변화의 폭은 크지만, 모든 변화가 곧 혁신은 아니다
+  - 핵심은 기술 자체가 아니라 적용 조건과 책임 구조다
+  - 근거가 부족한 부분은 판단의 강도를 낮춘다
+sentence_guidance:
+  max_sentence_chars_soft: 95
+  max_paragraph_chars_soft: 520
+  paragraph_rule: one_main_idea

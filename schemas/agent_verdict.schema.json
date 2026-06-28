@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentVerdict",
+  "type": "object",
+  "required": [
+    "agent",
+    "status",
+    "confidence",
+    "blocking_issues",
+    "next_agent"
+  ],
+  "properties": {
+    "agent": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "pass",
+        "conditional_pass",
+        "revise_required",
+        "fail"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "blocking_issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_agent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

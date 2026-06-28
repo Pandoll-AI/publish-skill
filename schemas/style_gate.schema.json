@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StyleGate",
+  "type": "object",
+  "required": [
+    "status",
+    "style_score",
+    "readability_score",
+    "semantic_drift",
+    "source_added",
+    "remaining_issues",
+    "retry_allowed"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "pass",
+        "conditional_pass",
+        "revise_required"
+      ]
+    },
+    "style_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "readability_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "semantic_drift": {
+      "type": "boolean"
+    },
+    "source_added": {
+      "type": "boolean"
+    },
+    "remaining_issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "retry_allowed": {
+      "type": "boolean"
+    }
+  }
+}

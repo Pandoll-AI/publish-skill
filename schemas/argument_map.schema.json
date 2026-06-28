@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArgumentMap",
+  "type": "object",
+  "required": [
+    "central_thesis",
+    "supporting_claim_ids",
+    "explicit_premises",
+    "hidden_premises",
+    "evidence_strength",
+    "conclusion_strength",
+    "counterarguments_needed"
+  ],
+  "properties": {
+    "central_thesis": {
+      "type": "string"
+    },
+    "supporting_claim_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "explicit_premises": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hidden_premises": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_strength": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "conclusion_strength": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "counterarguments_needed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
