@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Publish Skill 한글 인포그래픽</title>
+  <desc id="desc">초안을 출판 가능한 글로 바꾸는 사실, 논리, 문체 품질 게이트 흐름도</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="48%" stop-color="#f6f4ea"/>
+      <stop offset="100%" stop-color="#e8f4f0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#1f2937" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .font { font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans CJK KR", "Noto Sans KR", sans-serif; }
+      .title { font-size: 68px; font-weight: 800; fill: #17211f; letter-spacing: 0; }
+      .subtitle { font-size: 28px; font-weight: 500; fill: #3f4f4a; letter-spacing: 0; }
+      .label { font-size: 28px; font-weight: 800; fill: #17211f; letter-spacing: 0; }
+      .body { font-size: 21px; font-weight: 500; fill: #475569; letter-spacing: 0; }
+      .small { font-size: 18px; font-weight: 700; fill: #334155; letter-spacing: 0; }
+      .tiny { font-size: 15px; font-weight: 700; fill: #64748b; letter-spacing: 0; }
+      .card { fill: #fffdf8; stroke: #d9d2c4; stroke-width: 2; }
+      .gate { fill: #ffffff; stroke: #c9d8d2; stroke-width: 2; }
+      .chip { fill: #ecfdf5; stroke: #99d6c4; stroke-width: 1.5; }
+      .amber { fill: #fff7ed; stroke: #f6c06a; stroke-width: 1.5; }
+      .line { stroke: #89958f; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow { fill: #89958f; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1390" cy="145" r="190" fill="#d7ede7" opacity="0.45"/>
+  <circle cx="170" cy="760" r="220" fill="#fff1d6" opacity="0.65"/>
+
+  <g class="font">
+    <text x="800" y="105" text-anchor="middle" class="title">Publish Skill</text>
+    <text x="800" y="152" text-anchor="middle" class="subtitle">초안을 바로 꾸미지 않고, 사실과 논리를 통과시킨 뒤 출판 가능한 글로 마감합니다</text>
+
+    <g filter="url(#softShadow)">
+      <rect x="92" y="255" width="260" height="390" rx="24" class="card"/>
+      <text x="222" y="313" text-anchor="middle" class="label">초안 입력</text>
+      <text x="222" y="361" text-anchor="middle" class="body">거친 주장</text>
+      <text x="222" y="397" text-anchor="middle" class="body">긴 문단</text>
+      <text x="222" y="433" text-anchor="middle" class="body">AI식 상투구</text>
+      <text x="222" y="469" text-anchor="middle" class="body">근거 없는 확신</text>
+      <path d="M142 538 H302 M142 574 H270 M142 610 H286" class="line" opacity="0.35"/>
+      <rect x="138" y="211" width="118" height="36" rx="18" fill="#0f766e"/>
+      <text x="197" y="236" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff">DRAFT</text>
+    </g>
+
+    <path d="M370 450 H430" class="line"/>
+    <path d="M430 450 l-18 -12 v24 z" class="arrow"/>
+
+    <g filter="url(#softShadow)">
+      <rect x="455" y="220" width="690" height="460" rx="30" fill="#ffffff" stroke="#d7ded9" stroke-width="2"/>
+      <text x="800" y="282" text-anchor="middle" class="label">품질 게이트 루프</text>
+      <text x="800" y="318" text-anchor="middle" class="body">좋은 문장보다 먼저, 안전한 의미와 설득 구조를 확인합니다</text>
+
+      <g transform="translate(500 372)">
+        <rect width="170" height="96" rx="18" class="gate"/>
+        <text x="85" y="39" text-anchor="middle" class="small">1. 주장 추출</text>
+        <text x="85" y="68" text-anchor="middle" class="tiny">사실/해석/의견 분리</text>
+      </g>
+      <g transform="translate(715 372)">
+        <rect width="170" height="96" rx="18" class="gate"/>
+        <text x="85" y="39" text-anchor="middle" class="small">2. 근거 점검</text>
+        <text x="85" y="68" text-anchor="middle" class="tiny">출처 조작 금지</text>
+      </g>
+      <g transform="translate(930 372)">
+        <rect width="170" height="96" rx="18" class="gate"/>
+        <text x="85" y="39" text-anchor="middle" class="small">3. 논리 수리</text>
+        <text x="85" y="68" text-anchor="middle" class="tiny">비약/과장 차단</text>
+      </g>
+
+      <path d="M670 420 H715 M885 420 H930" class="line" opacity="0.55"/>
+      <path d="M705 420 l-14 -9 v18 z" class="arrow"/>
+      <path d="M920 420 l-14 -9 v18 z" class="arrow"/>
+
+      <g transform="translate(606 520)">
+        <rect width="170" height="96" rx="18" class="gate"/>
+        <text x="85" y="39" text-anchor="middle" class="small">4. 문체 정리</text>
+        <text x="85" y="68" text-anchor="middle" class="tiny">목소리 보존</text>
+      </g>
+      <g transform="translate(822 520)">
+        <rect width="170" height="96" rx="18" class="gate"/>
+        <text x="85" y="39" text-anchor="middle" class="small">5. 최종 판정</text>
+        <text x="85" y="68" text-anchor="middle" class="tiny">pass / revise</text>
+      </g>
+
+      <path d="M1015 468 C1015 505 940 512 907 520" class="line" opacity="0.55"/>
+      <path d="M776 568 H822" class="line" opacity="0.55"/>
+      <path d="M812 568 l-14 -9 v18 z" class="arrow"/>
+
+      <rect x="535" y="642" width="160" height="36" rx="18" class="chip"/>
+      <text x="615" y="666" text-anchor="middle" class="tiny">source needed</text>
+      <rect x="720" y="642" width="160" height="36" rx="18" class="amber"/>
+      <text x="800" y="666" text-anchor="middle" class="tiny">semantic diff</text>
+      <rect x="905" y="642" width="160" height="36" rx="18" class="chip"/>
+      <text x="985" y="666" text-anchor="middle" class="tiny">change log</text>
+    </g>
+
+    <path d="M1168 450 H1230" class="line"/>
+    <path d="M1230 450 l-18 -12 v24 z" class="arrow"/>
+
+    <g filter="url(#softShadow)">
+      <rect x="1254" y="255" width="260" height="390" rx="24" class="card"/>
+      <rect x="1302" y="211" width="132" height="36" rx="18" fill="url(#accent)"/>
+      <text x="1368" y="236" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff">FINAL</text>
+      <text x="1384" y="313" text-anchor="middle" class="label">출판본 출력</text>
+      <text x="1384" y="361" text-anchor="middle" class="body">더 약한 과장</text>
+      <text x="1384" y="397" text-anchor="middle" class="body">더 강한 구조</text>
+      <text x="1384" y="433" text-anchor="middle" class="body">더 사람 같은 리듬</text>
+      <text x="1384" y="469" text-anchor="middle" class="body">판정과 수정 로그</text>
+      <circle cx="1328" cy="556" r="30" fill="#0f766e"/>
+      <path d="M1313 556 l12 13 26 -30" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="1384" y="566" text-anchor="middle" class="small">검증 후 문장화</text>
+    </g>
+
+    <text x="800" y="770" text-anchor="middle" font-size="27" font-weight="800" fill="#17211f">사실 먼저. 논리 다음. 문체는 마지막.</text>
+    <text x="800" y="810" text-anchor="middle" class="body">출처를 만들지 않고, 의미를 drift시키지 않으며, 글쓴이의 판단을 보존합니다.</text>
+  </g>
+</svg>
