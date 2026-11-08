@@ -9,3 +9,7 @@ outputs/*
 !outputs/.gitkeep
 dist/*.zip
 .local-artifacts/
+
+# Local AI agent state
+.claude/
+.codex/
